@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}appolo{% endblock %}
+{% block name %}Article{% endblock %}
+{% block content %}
+
+<h2>{{ article.title }}</h2>
+
+<div>{{ article.description }}</div>
+
+<div>
+	<b>Tags</b>:			
+	{% for tag in article.tags.all %}
+		{{ tag.title}},
+	{% endfor %}	
+</div>
+			
+<div>
+	<b>Jurisdiction</b>: 			
+		{% for jurisdiction in article.jurisdictions.all %}
+			{{ jurisdiction.title}},
+		{% endfor %}	
+</div>
+{% endblock %}

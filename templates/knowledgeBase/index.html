@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}appolo{% endblock %}
+{% block name %}Home Page{% endblock %}
+{% block content %}
+
+
+Latest Faq List
+<ul>
+	{% for faq in latest_faq_list %}
+		<li><a href="/faq#{{ faq.id }}">{{ faq.title }}</a></li>
+	{% endfor %}
+</ul>        
+
+
+Latest Memo List
+<ul>
+	{% for memo in latest_memo_list %}
+		<li><a href="/memos/{{ memo.id }}">{{ memo.title }}</a></li>
+	{% endfor %}
+</ul>        
+
+
+Latest Article List
+<ul>
+	{% for article in latest_article_list %}
+		<li><a href="/article/{{ article.id }}">{{ article.title }}</a></li>
+	{% endfor %}
+</ul>        
+
+
+Latest Library List
+<ul>
+	{% for library in latest_library_list %}
+		<li><a href="/library/{{ library.id }}">{{ library.title }}</a></li>
+	{% endfor %}
+</ul>        
+{% endblock %}

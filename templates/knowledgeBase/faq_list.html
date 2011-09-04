@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}appolo{% endblock %}
+{% block name %}FAQ{% endblock %}
+
+{% block content %}
+
+	<ul>
+		{% for faq in object_list %}
+			<li>
+				<a href="#{{ faq.id }}">{{ faq.title }}</a>
+			</li> 
+		{% endfor %}
+	</ul>
+
+	{% for faq in object_list %}
+		<div>
+		    <a name="#{{ faq.id }}"></a>
+			<b>{{ faq.title }}</b>
+			<br />
+			<span>
+				{{ faq.description }}
+			</span>
+			
+			<div>
+				<b>Tags:</b>			
+					{% for tag in faq.tags.all %}
+						{{ tag.title}},
+					{% endfor %}	
+			</div>
+			
+			<div>
+				<b>Jurisdiction:</b> 			
+					{% for jurisdiction in faq.jurisdictions.all %}
+						{{ jurisdiction.title}},
+					{% endfor %}	
+			</div>
+			
+			
+		</div>
+	{% endfor %} 
+{% endblock %}

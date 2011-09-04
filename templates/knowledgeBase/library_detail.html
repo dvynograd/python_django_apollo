@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}appolo{% endblock %}
+{% block name %}Library{% endblock %}
+
+
+{% block content %}
+
+<h2>{{ library.title }}</h2>
+
+<div>{{ library.description }}</div>
+
+<div><a href="{{ library.file }}">download file</a></div>
+
+<div>
+	<b>Tags:</b>			
+	{% for tag in library.tags.all %}
+		{{ tag.title}},
+	{% endfor %}	
+</div>
+			
+<div>
+	<b>Jurisdiction:</b> 			
+		{% for jurisdiction in library.jurisdictions.all %}
+			{{ jurisdiction.title}},
+		{% endfor %}	
+</div>
+{% endblock %}

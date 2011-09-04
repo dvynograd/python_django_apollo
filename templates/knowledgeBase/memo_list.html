@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}appolo{% endblock %}
+{% block name %}Memo{% endblock %}
+{% block content %}
+    <ul>
+        {% for memo in object_list %}
+            <li><a href="/memos/{{ memo.id }}">{{ memo.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

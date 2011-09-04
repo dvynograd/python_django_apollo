@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}appolo{% endblock %}
+{% block name %}Library{% endblock %}
+
+
+{% block content %}
+    <ul>
+        {% for library in object_list %}
+            <li><a href="/library/{{ library.id }}">{{ library.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
